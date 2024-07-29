@@ -8,6 +8,10 @@ npm i -D @hazae41/next-sidebuild
 
 [**Node Package 📦**](https://www.npmjs.com/package/@hazae41/next-sidebuild)
 
+## Example
+
+<img width="696" src="https://github.com/user-attachments/assets/0e423e12-129d-4236-aa7f-9a9316ff40bb">
+
 ## Setup
 
 Install `@hazae41/next-sidebuild` as `devDependencies`
