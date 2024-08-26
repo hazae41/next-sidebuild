@@ -55,14 +55,6 @@ async function compileServiceWorker(wpconfig) {
        */
       path: path.join(process.cwd(), ".webpack")
     },
-
-    /**
-     * Configure minimizer
-     */
-    optimization: {
-      minimize: true,
-      minimizer: [new TerserPlugin()]
-    },
      
     /**
      * Use same config as Next.js
@@ -72,6 +64,14 @@ async function compileServiceWorker(wpconfig) {
     resolveLoader: wpconfig.resolveLoader,
     module: wpconfig.module,
     plugins: wpconfig.plugins,
+
+    /**
+     * Configure minimizer
+     */
+    optimization: {
+      minimize: true,
+      minimizer: wpconfig.optimization.minimizer
+    },
 
     /**
      * DNTUYKWYD
