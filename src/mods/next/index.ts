@@ -49,11 +49,11 @@ export function withNextSidebuild(config: NextConfig & NextSidebuildConfig): Nex
     ...defaults,
 
     webpack(wpconfig: Configuration, wpoptions: WebpackConfigContext) {
+      if (defaults.webpack != null)
+        wpconfig = defaults.webpack(wpconfig, wpoptions)
+
       if (!wpoptions.isServer)
         memory.promise = Promise.all(sidebuilds(wpconfig)).then(() => { })
-
-      if (defaults.webpack != null)
-        return defaults.webpack(wpconfig, wpoptions)
 
       return wpconfig
     },
