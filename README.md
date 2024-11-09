@@ -24,7 +24,6 @@ Modify your `next.config.js` to build your scripts
 
 ```js
 const path = require("path")
-const TerserPlugin = require("terser-webpack-plugin")
 const { NextSidebuild, withNextSidebuild } = require("@hazae41/next-sidebuild")
 
 async function compileServiceWorker(wpconfig) {
