@@ -1,4 +1,3 @@
-import fs from "fs"
 import { Nullable } from "libs/nullable/index.js"
 import { NextConfig } from "next"
 import Log from "next/dist/build/output/log.js"
@@ -32,8 +31,6 @@ export interface NextSidebuildConfig {
 
 export function withNextSidebuild(config: NextConfig & NextSidebuildConfig): NextConfig {
   const { sidebuilds, ...defaults } = config
-
-  fs.rmSync("./.webpack", { force: true, recursive: true })
 
   const memory = { promise: Promise.resolve() }
 
