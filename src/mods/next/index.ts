@@ -3,7 +3,6 @@ import { Nullable } from "libs/nullable/index.js"
 import { NextConfig } from "next"
 import Log from "next/dist/build/output/log.js"
 import { WebpackConfigContext } from "next/dist/server/config-shared.js"
-import path from "path"
 import { Configuration, Stats, webpack } from "webpack"
 
 export async function compile(wpconfig: Configuration) {
@@ -25,13 +24,6 @@ export async function compile(wpconfig: Configuration) {
   }
 
   Log.ready(`compiled ${wpconfig.name} in ${Date.now() - start} ms`)
-
-  const dirname = path.dirname(wpconfig.output.filename)
-  const basename = path.basename(wpconfig.output.filename)
-
-  fs.mkdirSync(`./public/${dirname}`, { recursive: true })
-
-  fs.copyFileSync(`./.webpack/${dirname}/${basename}`, `./public/${dirname}/${basename}`)
 }
 
 export interface NextSidebuildConfig {
