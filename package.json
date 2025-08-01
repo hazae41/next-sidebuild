@@ -1,7 +1,7 @@
 {
   "type": "module",
   "name": "@hazae41/next-sidebuild",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Build workers and scripts during your Next.js build",
   "homepage": "https://github.com/hazae41/next-sidebuild",
   "repository": "github:hazae41/next-sidebuild",
